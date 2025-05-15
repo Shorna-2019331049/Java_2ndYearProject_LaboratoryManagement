@@ -207,7 +207,7 @@ public class loginController {
             signup.setTitle("Instructor Signup Form");
         }
         signup.show();
-        signup.setResizable(false);
+    //    signup.setResizable(false);
     }
 
     @FXML
@@ -243,7 +243,7 @@ public class loginController {
             Scene sc = new Scene(root);
             login.setScene(sc);
             login.show();
-            login.setResizable(false);
+        //    login.setResizable(false);
         }
         else if (type == "INSTRUCTOR"){
             signUp.getScene().getWindow().hide();

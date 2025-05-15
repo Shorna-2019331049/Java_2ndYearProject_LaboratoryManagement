@@ -13,10 +13,10 @@
 
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="1500.0" style="-fx-background-color: #032F52;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboratoryManagement.Controller.StudentSignUpController">
    <children>
-      <Line endX="115.54141235351562" endY="7.62939453125E-6" layoutX="129.0" layoutY="48.0" startX="-100.0" stroke="#fcfcfc" />
-      <Label layoutX="60.0" layoutY="21.0" text="Student Sign Up" textFill="WHITE">
+      <Line endX="141.4000244140625" layoutX="129.0" layoutY="48.0" startX="-100.0" stroke="#fcfcfc" />
+      <Label layoutX="46.0" layoutY="14.0" text="Student Sign Up" textFill="WHITE">
          <font>
-            <Font name="System Bold Italic" size="18.0" />
+            <Font name="System Bold Italic" size="24.0" />
          </font>
       </Label>
       <Label layoutX="530.0" layoutY="229.0" text="Name:" textFill="WHITE">
@@ -24,80 +24,74 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
+      <TextField fx:id="name" layoutX="613.0" layoutY="225.0" prefHeight="26.0" prefWidth="354.0" promptText="Enter name" />
       <Label layoutX="530.0" layoutY="264.0" prefHeight="19.0" prefWidth="57.0" text="Reg. No:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="530.0" layoutY="301.0" prefHeight="19.0" prefWidth="72.0" text="Group No:" textFill="WHITE">
+      <TextField fx:id="registration" layoutX="613.0" layoutY="260.0" prefHeight="26.0" prefWidth="354.0" promptText="Enter registration" />
+      <Label layoutX="530.0" layoutY="313.0" text="Contact:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="530.0" layoutY="338.0" text="Contact:" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="530.0" layoutY="477.0" prefHeight="19.0" prefWidth="72.0" text="University:" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="531.0" layoutY="518.0" prefHeight="19.0" prefWidth="72.0" text="Username:" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <TextField fx:id="name" layoutX="613.0" layoutY="225.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter name" />
-      <TextField fx:id="registration" layoutX="613.0" layoutY="260.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter registration" />
-      <TextField fx:id="group" layoutX="613.0" layoutY="297.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter group" />
-      <TextField fx:id="contact" layoutX="613.0" layoutY="334.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter contact" />
-      <TextField fx:id="university" layoutX="615.0" layoutY="474.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter university" />
-      <Button fx:id="signup" layoutX="768.0" layoutY="651.0" mnemonicParsing="false" onAction="#handlesignup" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #14a7dc;" text="Sign Up">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Button>
-      <Label layoutX="531.0" layoutY="379.0" text="Gender:" textFill="WHITE">
+      <TextField fx:id="contact" layoutX="613.0" layoutY="309.0" prefHeight="26.0" prefWidth="354.0" promptText="Enter contact" />
+      <Label layoutX="531.0" layoutY="354.0" text="Gender:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="530.0" layoutY="412.0" text="Address:" textFill="WHITE">
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font>
-      </Label>
-      <TextField fx:id="address" layoutX="615.0" layoutY="407.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter address" />
-      <RadioButton fx:id="male" layoutX="616.0" layoutY="379.0" mnemonicParsing="false" text="Male" textFill="WHITE">
+      <RadioButton fx:id="male" layoutX="616.0" layoutY="354.0" mnemonicParsing="false" text="Male" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="female" layoutX="769.0" layoutY="379.0" mnemonicParsing="false" text="Female" textFill="WHITE">
+      <RadioButton fx:id="female" layoutX="814.0" layoutY="354.0" mnemonicParsing="false" text="Female" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </RadioButton>
-      <TextField fx:id="department" layoutX="615.0" layoutY="440.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter department" />
-      <Label layoutX="530.0" layoutY="445.0" prefHeight="18.0" prefWidth="72.0" text="Department:" textFill="WHITE">
+      <Label layoutX="530.0" layoutY="452.0" prefHeight="19.0" prefWidth="72.0" text="University:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="531.0" layoutY="493.0" prefHeight="19.0" prefWidth="72.0" text="Username:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="university" layoutX="615.0" layoutY="449.0" prefHeight="26.0" prefWidth="354.0" promptText="Enter university" />
+      <Button fx:id="signup" layoutX="769.0" layoutY="579.0" mnemonicParsing="false" onAction="#handlesignup" prefHeight="35.0" prefWidth="90.0" style="-fx-background-color: #14a7dc; -fx-background-radius: 40;" text="Sign Up">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Label layoutX="530.0" layoutY="387.0" text="Address:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Button fx:id="backHomepage" layoutX="1286.0" layoutY="655.0" mnemonicParsing="false" onAction="#handleBackHomepage" prefHeight="27.0" prefWidth="162.0" style="-fx-background-color: #14a7dc;" text="&lt; Back to Homepage &gt;">
+      <TextField fx:id="address" layoutX="615.0" layoutY="382.0" prefHeight="26.0" prefWidth="354.0" promptText="Enter address" />
+      <TextField fx:id="department" layoutX="615.0" layoutY="415.0" prefHeight="26.0" prefWidth="354.0" promptText="Enter department" />
+      <Label layoutX="530.0" layoutY="420.0" prefHeight="18.0" prefWidth="72.0" text="Department:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="backHomepage" layoutX="1284.0" layoutY="614.0" mnemonicParsing="false" onAction="#handleBackHomepage" prefHeight="27.0" prefWidth="162.0" style="-fx-background-color: #14a7dc;" text="Back to Homepage">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <TextField fx:id="username" layoutX="615.0" layoutY="514.0" onKeyReleased="#checkDuplicate" prefHeight="26.0" prefWidth="254.0" promptText="Enter username" />
-      <Label layoutX="530.0" layoutY="554.0" text="Password:" textFill="WHITE">
+      <TextField fx:id="username" layoutX="615.0" layoutY="489.0" onKeyReleased="#checkDuplicate" prefHeight="26.0" prefWidth="354.0" promptText="Enter username" />
+      <Label layoutX="530.0" layoutY="529.0" text="Password:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <PasswordField fx:id="password" layoutX="615.0" layoutY="550.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter password" />
+      <PasswordField fx:id="password" layoutX="615.0" layoutY="525.0" prefHeight="26.0" prefWidth="354.0" promptText="Enter password" />
       <Button fx:id="browse" layoutX="613.0" layoutY="168.0" mnemonicParsing="false" onAction="#browseImg" style="-fx-background-color: #14a7dc; -fx-background-radius: 40;" text="Browse Image" />
       <ImageView fx:id="imageInsrt" fitHeight="150.0" fitWidth="200.0" layoutX="613.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-radius: 60;">
          <image>

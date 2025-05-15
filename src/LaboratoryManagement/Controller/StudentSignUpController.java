@@ -40,8 +40,9 @@ public class StudentSignUpController extends SignUpController {
     private TextField university;
     private String path;
     private File img;
+
     public void handlesignup() {
-        if((Objects.equals(username.getText(), "")) || (Objects.equals(name.getText(), "")) || (Objects.equals(registration.getText(), "")) || (Objects.equals(group.getText(), ""))
+        if((Objects.equals(username.getText(), "")) || (Objects.equals(name.getText(), "")) || (Objects.equals(registration.getText(), ""))
                 || (Objects.equals(contact.getText(), "")) || (Objects.equals(password.getText(), "")) || (Objects.equals(department.getText(), "")) || (Objects.equals(university.getText(), ""))
                 || (Objects.equals(address.getText(), "")) || Err || img == null){
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -52,8 +53,8 @@ public class StudentSignUpController extends SignUpController {
         else {
 
             //saving data
-            String insert = "INSERT INTO student(name,registration,groupno,contact,gender,address,department,university,username,password,studentImg)"
-                    + "VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+            String insert = "INSERT INTO student(name,registration,contact,gender,address,department,university,username,password,studentImg)"
+                    + "VALUES (?,?,?,?,?,?,?,?,?,?)";
 
             try {
                 pst = conn.prepareStatement(insert);
@@ -64,16 +65,14 @@ public class StudentSignUpController extends SignUpController {
             try {
                 pst.setString(1, name.getText());
                 pst.setString(2, registration.getText());
-                pst.setString(3, group.getText());
-                pst.setString(4, contact.getText());
-                pst.setString(5, getGender());
-                pst.setString(6, address.getText());
-                pst.setString(7, department.getText());
-                pst.setString(8, university.getText());
-                pst.setString(9, username.getText());
-                pst.setString(10, password.getText());
-
-                pst.setBlob(11,new FileInputStream(img));
+                pst.setString(3, contact.getText());
+                pst.setString(4, getGender());
+                pst.setString(5, address.getText());
+                pst.setString(6, department.getText());
+                pst.setString(7, university.getText());
+                pst.setString(8, username.getText());
+                pst.setString(9, password.getText());
+                pst.setBlob(10,new FileInputStream(img));
                 signedUp = true;
                 pst.executeUpdate();
 
@@ -85,7 +84,6 @@ public class StudentSignUpController extends SignUpController {
                 username.setText(null);
                 password.setText(null);
                 contact.setText(null);
-                group.setText(null);
                 address.setText(null);
                 department.setText(null);
                 university.setText(null);
@@ -123,10 +121,11 @@ public class StudentSignUpController extends SignUpController {
     @FXML
     void browseImg(ActionEvent event) {
         FileChooser f = new FileChooser();
-        f.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PNG","*.png"),
+        f.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("All","*.*"),
+                new FileChooser.ExtensionFilter("PNG","*.png"),
                 new FileChooser.ExtensionFilter("JPG","*.jpg"),
                 new FileChooser.ExtensionFilter("JPEG","*.jpeg"));
-        f.setInitialDirectory(new File("C:\\Users\\Asus\\Desktop\\laboratoryManagement\\src\\LaboratoryManagement\\resource"));
+        f.setInitialDirectory(new File("C:\\Users\\User\\Documents\\java\\New Folder 11\\laboratoryManagement\\src\\LaboratoryManagement\\resource"));
         f.setInitialFileName("myImage.jpg");
         img = f.showOpenDialog(new Stage());
         if(img != null){

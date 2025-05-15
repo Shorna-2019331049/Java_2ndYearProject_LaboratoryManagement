@@ -1,14 +1,17 @@
 package LaboratoryManagement.Controller;
 
+import DBconnection.DBhandler;
+import LaboratoryManagement.User;
 import javafx.animation.PauseTransition;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Arc;
@@ -18,6 +21,10 @@ import javafx.util.Duration;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class HomePageController{
@@ -81,6 +88,25 @@ public class HomePageController{
 
     @FXML
     private Label success;
+
+    @FXML
+    private TableView<User> list;
+
+    @FXML
+    private TableColumn<User,String> crsCode;
+
+    @FXML
+    private TableColumn<User, String> crsNam;
+
+    @FXML
+    private TableColumn<User, Integer> expNo;
+
+    @FXML
+    private TableColumn<User, String> tName;
+
+    private Connection conn;
+    private DBhandler handler;
+    private PreparedStatement pst;
     @FXML
     void loginAction(ActionEvent event) throws IOException {
         Slogo.getScene().getWindow().hide();
@@ -143,21 +169,76 @@ public class HomePageController{
         typeOfUser.getItems().addAll("Student","Teacher","Instructor");
         typeOfUser.setValue("Student");
     }
+    int cntc = 0;
     @FXML
-    void showContact(ActionEvent event) {
-        contact1.setText("ayeshachowdhuryrimi@gmail.com");
-        contact2.setText("shorna412@gmail.com");
-        contact3.setText("Shahjalal University of Science and Technology");
-        File imgPth = new File("C:\\Users\\Asus\\Desktop\\laboratoryManagement\\src\\LaboratoryManagement\\resource\\msgIcon.png");
-        img1.setImage(new Image(imgPth.toURI().toString()));
-        img1.setVisible(true);
-        img2.setImage(new Image(imgPth.toURI().toString()));
-        img2.setVisible(true);
-        File imgPth1 = new File("C:\\Users\\Asus\\Desktop\\laboratoryManagement\\src\\LaboratoryManagement\\resource\\location.png");
-        img3.setImage(new Image(imgPth1.toURI().toString()));
-        img3.setVisible(true);
-        contact1.setVisible(true);
-        contact2.setVisible(true);
-        contact3.setVisible(true);
+    void showContact(ActionEvent event) {///
+        if(cntc%2 == 0){
+            contact1.setText("ayeshachowdhuryrimi@gmail.com");
+            contact2.setText("shorna412@gmail.com");
+            contact3.setText("Shahjalal University of Science and Technology");
+            File imgPth = new File("C:\\Users\\User\\Documents\\java\\New Folder 11\\laboratoryManagement\\src\\LaboratoryManagement\\resource\\msgIcon.png");
+            img1.setImage(new Image(imgPth.toURI().toString()));
+            img1.setVisible(true);
+            img2.setImage(new Image(imgPth.toURI().toString()));
+            img2.setVisible(true);
+            File imgPth1 = new File("C:\\Users\\User\\Documents\\java\\New Folder 11\\laboratoryManagement\\src\\LaboratoryManagement\\resource\\location.png");
+            img3.setImage(new Image(imgPth1.toURI().toString()));
+            img3.setVisible(true);
+            contact1.setVisible(true);
+            contact2.setVisible(true);
+            contact3.setVisible(true);
+        }
+        else{
+            img3.setVisible(false);
+            img2.setVisible(false);
+            img1.setVisible(false);
+            contact1.setVisible(false);
+            contact2.setVisible(false);
+            contact3.setVisible(false);
+        }
+        cntc++;
+    }
+
+    ObservableList<User> crsList = FXCollections.observableArrayList();
+    int dashClicked = 0;
+    @FXML
+    void showCrs(ActionEvent event) throws SQLException {
+        handler = new DBhandler();
+        conn = handler.getConnection();
+        dashClicked++;
+        if (dashClicked % 2 == 0) {
+            list.setVisible(false);
+        } else {
+            crsList.clear();
+            crsNam.setCellValueFactory(new PropertyValueFactory<User, String>("courseName"));
+            crsCode.setCellValueFactory(new PropertyValueFactory<User, String>("Code"));
+            tName.setCellValueFactory(new PropertyValueFactory<User, String>("tname"));
+            expNo.setCellValueFactory(new PropertyValueFactory<User, Integer>("expNum"));
+            list.setVisible(true);
+            int cnt = 0;
+            String s = "SELECT count(*) from courselist";
+            try {
+                pst = conn.prepareStatement(s);
+                ResultSet rs = pst.executeQuery();
+                while (rs.next()) {
+                    cnt = rs.getInt("count(*)");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            System.out.println(cnt);
+            String ss = "SELECT * FROM courselist where id = ?";
+            for (int i = 1; i <= cnt; i++) {
+                pst = conn.prepareStatement(ss);
+                pst.setInt(1, i);
+                ResultSet rs = pst.executeQuery();
+                while (rs.next()) {
+                    System.out.println(rs.getString("courseName"));
+                    crsList.add(new User(rs.getString("courseName"), rs.getString("courseCode"),
+                            rs.getString("teacherName"), rs.getInt("numExp")));
+                    list.setItems(crsList);
+                }
+            }
+        }
     }
 }

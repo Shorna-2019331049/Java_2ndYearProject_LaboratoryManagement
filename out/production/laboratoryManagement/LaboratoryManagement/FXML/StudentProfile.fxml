@@ -2,11 +2,15 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="1500.0" style="-fx-background-color: #01386E;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboratoryManagement.Controller.StudentProfile">
@@ -21,34 +25,34 @@
             <Image url="@../resource/userimg.jpg" />
          </image>
       </ImageView>
-      <Label fx:id="fullname" alignment="CENTER" contentDisplay="CENTER" layoutX="1200.0" layoutY="213.0" prefHeight="35.0" prefWidth="197.0" text="Label">
+      <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="1236.0" layoutY="189.0" prefHeight="35.0" prefWidth="172.0" style="-fx-border-color: #44aed4; -fx-border-radius: 50;" text="Label" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Bell MT" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="username" alignment="CENTER" contentDisplay="CENTER" layoutX="1201.0" layoutY="165.0" prefHeight="35.0" prefWidth="197.0" text="Label">
+      <Label fx:id="fullname" contentDisplay="CENTER" layoutX="1235.0" layoutY="230.0" prefHeight="35.0" prefWidth="256.0" text="Label" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Bell MT" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="university" alignment="CENTER" contentDisplay="CENTER" layoutX="1200.0" layoutY="258.0" prefHeight="35.0" prefWidth="197.0" text="Label">
+      <Label fx:id="university" alignment="CENTER" contentDisplay="CENTER" layoutX="1235.0" layoutY="274.0" prefHeight="35.0" prefWidth="172.0" style="-fx-border-color: #44aed4; -fx-border-radius: 50;" text="Label" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Bell MT" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="department" alignment="CENTER" contentDisplay="CENTER" layoutX="1200.0" layoutY="307.0" prefHeight="35.0" prefWidth="197.0" text="Label">
+      <Label fx:id="department" alignment="CENTER" contentDisplay="CENTER" layoutX="1235.0" layoutY="322.0" prefHeight="35.0" prefWidth="162.0" style="-fx-border-color: #44aed4; -fx-border-radius: 50;" text="Label" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Bell MT" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="regnum" alignment="CENTER" contentDisplay="CENTER" layoutX="1200.0" layoutY="348.0" prefHeight="35.0" prefWidth="197.0" text="Label">
+      <Label fx:id="regnum" alignment="CENTER" contentDisplay="CENTER" layoutX="1235.0" layoutY="362.0" prefHeight="35.0" prefWidth="162.0" style="-fx-border-color: #44aed4; -fx-border-radius: 50;" text="Label" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Bell MT" size="16.0" />
          </font>
       </Label>
-      <Label fx:id="contact" alignment="CENTER" contentDisplay="CENTER" layoutX="1200.0" layoutY="391.0" prefHeight="35.0" prefWidth="197.0" text="Label">
+      <Label fx:id="contact" alignment="CENTER" contentDisplay="CENTER" layoutX="1235.0" layoutY="405.0" prefHeight="35.0" prefWidth="162.0" style="-fx-border-color: #44aed4; -fx-border-radius: 50;" text="Label" textFill="WHITE">
          <font>
-            <Font name="System Bold" size="16.0" />
+            <Font name="Bell MT" size="16.0" />
          </font>
       </Label>
       <ImageView fitHeight="133.0" fitWidth="336.0" layoutX="133.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
@@ -77,8 +81,12 @@
          </font>
       </Button>
       <TextField fx:id="coursename" layoutX="143.0" layoutY="261.0" onKeyReleased="#coursenameAction" prefHeight="20.0" prefWidth="197.0" promptText="enter course name in small case" />
-      <Label fx:id="err" layoutX="469.0" layoutY="316.0" prefHeight="17.0" prefWidth="239.0" text="Course name invalid!!!" textFill="WHITE" visible="false" />
-      <Button fx:id="logout" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="0.0" layoutX="1416.6" layoutY="1.0" mnemonicParsing="false" onAction="#handlelogout" prefHeight="35.0" prefWidth="82.0" style="-fx-background-color: #4BA8EB;" text="logout" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="1.0">
+      <Label fx:id="err" layoutX="143.0" layoutY="286.0" prefHeight="17.0" prefWidth="239.0" text="Course name invalid!!!" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Book Antiqua Italic" size="12.0" />
+         </font>
+      </Label>
+      <Button fx:id="logout" alignment="CENTER" contentDisplay="RIGHT" graphicTextGap="0.0" layoutX="1404.0" layoutY="656.0" mnemonicParsing="false" onAction="#handlelogout" prefHeight="43.0" prefWidth="96.0" style="-fx-background-color: #4BA8EB;" text="logout" AnchorPane.bottomAnchor="0.7999999999999545" AnchorPane.rightAnchor="0.0">
          <font>
             <Font name="Rockwell Condensed" size="20.0" />
          </font>
@@ -90,6 +98,284 @@
          <font>
             <Font name="ROGFonts-Regular" size="18.0" />
          </font>
+      </Label>
+      <Button fx:id="enroll" layoutX="143.0" layoutY="444.0" mnemonicParsing="false" onAction="#handleEnrollment" prefHeight="30.0" prefWidth="197.0" text="Enroll in a course">
+         <font>
+            <Font name="Georgia Bold" size="14.0" />
+         </font>
+      </Button>
+      <Pane fx:id="enrollPane" layoutX="485.0" layoutY="29.0" prefHeight="209.0" prefWidth="406.0" visible="false">
+         <children>
+            <TextField fx:id="enrollCourseName" layoutX="82.0" layoutY="14.0" prefHeight="38.0" prefWidth="239.0" promptText="Enter Course Name" />
+            <TextField fx:id="enrollCourseCode" layoutX="82.0" layoutY="91.0" prefHeight="38.0" prefWidth="239.0" promptText="Enter Course Code" />
+            <Button fx:id="enrollBtn" layoutX="317.0" layoutY="160.0" mnemonicParsing="false" onAction="#enrollMentAction" style="-fx-background-color: darkblue; -fx-border-color: white; -fx-border-radius: 30; -fx-background-radius: 40;" text="Enroll Me" textFill="WHITE">
+               <font>
+                  <Font name="Book Antiqua Bold Italic" size="14.0" />
+               </font>
+               <effect>
+                  <DropShadow height="30.36" radius="22.2825" spread="0.19" width="60.77">
+                     <color>
+                        <Color red="0.05738791450858116" green="0.0249512679874897" blue="0.6736842393875122" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+            <Label fx:id="errCode" layoutX="80.0" layoutY="134.0" prefHeight="26.0" prefWidth="239.0" text="Wrong Course Name or Code" textFill="WHITE">
+               <font>
+                  <Font name="Baskerville Old Face" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="success" alignment="CENTER" layoutX="580.0" layoutY="97.0" prefHeight="46.0" prefWidth="256.0" style="-fx-border-color: white; -fx-border-radius: 30;" text="Successfully enrolled" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Constantia" size="22.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Pane fx:id="overviewPane" layoutX="417.0" layoutY="257.0" prefHeight="217.0" prefWidth="334.0" visible="false">
+         <children>
+            <Button fx:id="attendance" layoutX="99.0" layoutY="34.0" mnemonicParsing="false" onAction="#attendAction" prefHeight="30.0" prefWidth="134.0" text="Attendance">
+               <font>
+                  <Font name="Georgia Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="groupBtn" layoutX="98.0" layoutY="88.0" mnemonicParsing="false" onAction="#groupAction" prefHeight="30.0" prefWidth="134.0" text="Group">
+               <font>
+                  <Font name="Georgia Bold" size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="record" layoutX="98.0" layoutY="141.0" mnemonicParsing="false" onAction="#recordAction" prefHeight="30.0" prefWidth="134.0" text="Records">
+               <font>
+                  <Font name="Georgia Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1073.0" layoutY="191.0" prefHeight="35.0" prefWidth="162.0" text="Username:" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1072.0" layoutY="229.0" prefHeight="35.0" prefWidth="162.0" text="Fullname:" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1072.0" layoutY="274.0" prefHeight="35.0" prefWidth="162.0" text="University:" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1072.0" layoutY="323.0" prefHeight="35.0" prefWidth="162.0" text="Department:" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1072.0" layoutY="364.0" prefHeight="35.0" prefWidth="162.0" text="Reg. No.:" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="1072.0" layoutY="407.0" prefHeight="35.0" prefWidth="162.0" text="Contact" textFill="WHITE">
+         <font>
+            <Font name="Bell MT" size="16.0" />
+         </font>
+      </Label>
+      <Pane fx:id="Attendance" layoutX="700.0" layoutY="262.0" prefHeight="233.0" prefWidth="366.0" visible="false">
+         <children>
+            <TextField fx:id="crsName" layoutX="116.0" layoutY="22.0" onAction="#crsCheck" prefHeight="30.0" prefWidth="162.0" promptText="Enter course name" />
+            <Label layoutX="17.0" layoutY="24.0" prefHeight="26.0" prefWidth="83.0" text="Course Name:" textFill="WHITE" />
+            <Label fx:id="errAtd" alignment="CENTER" layoutX="27.0" layoutY="94.0" prefHeight="46.0" prefWidth="320.0" text="Invalid course name!!" textFill="WHITE" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.9894737005233765" green="0.9858089685440063" blue="0.9858089685440063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="errEnr" alignment="CENTER" layoutX="27.0" layoutY="94.0" prefHeight="46.0" prefWidth="320.0" text="You are not enrolled yet!!" textFill="WHITE" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.9894737005233765" green="0.9858089685440063" blue="0.9858089685440063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="errDate" alignment="CENTER" layoutX="27.0" layoutY="94.0" prefHeight="46.0" prefWidth="320.0" text="No class today in routine!!" textFill="WHITE" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.9894737005233765" green="0.9858089685440063" blue="0.9858089685440063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="successAtd" alignment="CENTER" layoutX="27.0" layoutY="94.0" prefHeight="46.0" prefWidth="320.0" text="Present!!" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="Georgia" size="18.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.9894737005233765" green="0.9858089685440063" blue="0.9858089685440063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label fx:id="errMrk" alignment="CENTER" layoutX="27.0" layoutY="94.0" prefHeight="46.0" prefWidth="320.0" text="Already marked present!!" textFill="WHITE" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.9894737005233765" green="0.9858089685440063" blue="0.9858089685440063" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+         </children>
+      </Pane>
+      <Label fx:id="already_enrolled" layoutX="550.0" layoutY="135.0" prefHeight="38.0" prefWidth="226.0" text="Already Enrolled!!" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Georgia Bold" size="14.0" />
+         </font>
+      </Label>
+      <Pane fx:id="Group" layoutX="655.0" layoutY="262.0" prefHeight="373.0" prefWidth="418.0" visible="false">
+         <children>
+            <Label layoutX="47.0" layoutY="52.0" text="Course Name:" textFill="WHITE">
+               <font>
+                  <Font name="Georgia Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="47.0" layoutY="89.0" text="Group No:" textFill="WHITE">
+               <font>
+                  <Font name="Georgia Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="47.0" layoutY="126.0" text="Members:" textFill="WHITE">
+               <font>
+                  <Font name="Georgia Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="Members" alignment="CENTER" layoutX="34.0" layoutY="162.0" prefHeight="182.0" prefWidth="366.0" style="-fx-border-color: white; -fx-border-radius: 30; -fx-background-radius: 50;" text="Label" textFill="WHITE">
+               <font>
+                  <Font name="Georgia Bold" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="courseName" layoutX="159.0" layoutY="48.0" prefHeight="25.0" prefWidth="198.0" />
+            <TextField fx:id="grpNo" layoutX="159.0" layoutY="85.0" onAction="#showMembers" prefHeight="25.0" prefWidth="198.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="ResultPane" layoutX="385.0" layoutY="279.0" prefHeight="245.0" prefWidth="346.0" visible="false">
+         <children>
+            <Label layoutX="30.0" layoutY="24.0" text="Course Name:" textFill="WHITE">
+               <font>
+                  <Font name="Georgia Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="COURSEname" layoutX="144.0" layoutY="20.0" onAction="#courseNAMEaction" prefHeight="25.0" prefWidth="186.0" promptText="Write a course name" />
+            <Label fx:id="didnotPUBlish" layoutX="70.0" layoutY="92.0" text="Result hasn't published yet!!" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Pane fx:id="Result2ndPane" layoutX="28.0" layoutY="59.0" prefHeight="166.0" prefWidth="290.0" visible="false">
+               <children>
+                  <Label layoutY="36.0" text="PDF: " textFill="WHITE">
+                     <font>
+                        <Font name="Georgia Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="pdfLABEL" layoutX="48.0" layoutY="36.0" text="Label" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="download" layoutX="48.0" layoutY="83.0" mnemonicParsing="false" onAction="#DownloadAction" prefHeight="26.0" prefWidth="96.0" text="Download">
+                     <font>
+                        <Font name="Georgia Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="pdfDOWNload" layoutX="48.0" layoutY="120.0" prefHeight="16.0" prefWidth="205.0" text="PDF has been downloaded!" textFill="WHITE" visible="false">
+                     <font>
+                        <Font name="Georgia Bold Italic" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Pane fx:id="finePane" layoutX="28.0" layoutY="63.0" prefHeight="166.0" prefWidth="306.0" visible="false">
+               <children>
+                  <TextField fx:id="fineField" layoutX="34.0" layoutY="52.0" onAction="#fineFieldAction" prefHeight="25.0" prefWidth="217.0" promptText="Pay here" />
+                  <Label layoutX="34.0" layoutY="23.0" prefHeight="17.0" prefWidth="73.0" text="Fine: " textFill="WHITE">
+                     <font>
+                        <Font name="Georgia Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fineLabel" layoutX="106.0" layoutY="23.0" prefHeight="17.0" prefWidth="73.0" text="?" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="142.0" layoutY="23.0" prefHeight="17.0" prefWidth="73.0" text="tk" textFill="WHITE">
+                     <font>
+                        <Font name="Georgia Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="finepayButton" layoutX="179.0" layoutY="94.0" mnemonicParsing="false" onAction="#handleFinePay" prefHeight="30.0" prefWidth="83.0" text="PAY">
+                     <font>
+                        <Font name="Georgia Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+      <Pane fx:id="recordPane" layoutX="437.0" layoutY="54.0" prefHeight="451.0" prefWidth="660.0" visible="false">
+         <children>
+            <TextField fx:id="recCrs" layoutX="111.0" layoutY="14.0" onAction="#calFineRec" prefHeight="35.0" prefWidth="172.0" promptText="Course Name" />
+            <TableView fx:id="tablev" layoutY="82.0" prefHeight="374.0" prefWidth="660.0">
+              <columns>
+                <TableColumn fx:id="expNam" prefWidth="171.19992065429688" text="Experiment" />
+                <TableColumn fx:id="mat" prefWidth="178.4000244140625" text="Materials" />
+                  <TableColumn fx:id="status" prefWidth="93.60003662109375" text="Status" />
+                  <TableColumn fx:id="retCheck" prefWidth="123.20001220703125" text="Returned materials" />
+                  <TableColumn fx:id="expDat" prefWidth="92.0" text="Date" />
+              </columns>
+            </TableView>
+            <Label fx:id="errRec" alignment="CENTER" layoutX="330.0" layoutY="14.0" prefHeight="30.0" prefWidth="198.0" text="Invalid Course Name" textFill="WHITE" visible="false" />
+            <Button fx:id="rec" layoutX="594.0" layoutY="49.0" mnemonicParsing="false" onAction="#recodAct" style="-fx-background-color: #005C85; -fx-background-radius: 30; -fx-border-color: white; -fx-border-radius: 30;" text="save" textFill="WHITE">
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Button>
+         </children>
+      </Pane>
+      <Label fx:id="success1" alignment="CENTER" layoutX="580.0" layoutY="227.0" prefHeight="46.0" prefWidth="239.0" style="-fx-border-color: white; -fx-border-radius: 30;" text="Successfully recorded" textFill="WHITE" visible="false">
+         <font>
+            <Font size="22.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
    </children>
 </AnchorPane>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="773.0" prefWidth="1510.0" style="-fx-background-color: #6082B6;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboratoryManagement.Controller.StudentResultTable">
+    <children>
+        <Button layoutX="599.0" layoutY="26.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="336.0" style="-fx-background-color: #6082B6; -fx-border-color: white; -fx-border-radius: 40;" text="Records of Students" textFill="WHITE">
+            <effect>
+                <InnerShadow>
+                    <input>
+                        <Reflection />
+                    </input>
+                </InnerShadow>
+            </effect>
+            <font>
+                <Font name="Consolas Bold Italic" size="18.0" />
+            </font>
+        </Button>
+        <TableView fx:id="Table" layoutX="272.0" layoutY="103.0" prefHeight="590.0" prefWidth="928.0">
+            <columns>
+                <TableColumn fx:id="regNo" prefWidth="158.3999900817871" text="Reg.No" />
+                <TableColumn fx:id="fullName" prefWidth="211.2000274658203" text="Student's Name" />
+                <TableColumn fx:id="grpNo" prefWidth="186.39996337890625" text="Group No:" />
+                <TableColumn fx:id="username" prefWidth="183.99993896484375" text="Username" />
+            <TableColumn fx:id="contact" prefWidth="183.99993896484375" text="Contact" />
+            </columns>
+        </TableView>
+        <Button fx:id="back" layoutX="1285.0" layoutY="702.0" mnemonicParsing="false" onAction="#handleBack" prefHeight="37.0" prefWidth="160.0" style="-fx-background-color: #6082B6; -fx-border-color: white; -fx-border-radius: 40;" text="Back" textFill="WHITE">
+            <font>
+                <Font name="Consolas Bold Italic" size="18.0" />
+            </font>
+            <effect>
+                <InnerShadow />
+            </effect>
+        </Button>
+        <Button fx:id="Ok" layoutX="1061.0" layoutY="701.0" mnemonicParsing="false" onAction="#handleOk" prefHeight="38.0" prefWidth="142.0" style="-fx-background-color: #6082B6; -fx-border-color: white; -fx-border-radius: 40;" text="OK" textFill="WHITE">
+            <effect>
+                <InnerShadow />
+            </effect>
+            <font>
+                <Font name="Consolas Bold Italic" size="18.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

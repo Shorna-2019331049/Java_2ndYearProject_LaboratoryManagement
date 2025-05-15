@@ -3,63 +3,76 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="514.0" prefWidth="600.0" style="-fx-background-color: #72A0C1;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboratoryManagement.Controller.Addcourse">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="1500.0" style="-fx-background-color: #72A0C1;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboratoryManagement.Controller.Addcourse">
    <children>
-      <ImageView fitHeight="122.0" fitWidth="168.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="146.0" fitWidth="230.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resource/logo.png" />
          </image>
+         <effect>
+            <Reflection />
+         </effect>
       </ImageView>
-      <Line endX="30.79998779296875" layoutX="126.0" layoutY="103.0" startX="-100.0" stroke="BLUE" />
-      <Label layoutX="61.0" layoutY="80.0" prefHeight="30.0" prefWidth="70.0" text="Smart" textFill="#0b45a1">
+      <Line endX="29.199996948242188" endY="-6.4000091552734375" layoutX="210.0" layoutY="140.0" startX="-93.19999694824219" startY="-6.4000091552734375" stroke="BLUE" />
+      <Label layoutX="123.0" layoutY="109.0" prefHeight="30.0" prefWidth="70.0" text="Smart" textFill="#0b45a1">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="110.0" layoutY="95.0" prefHeight="30.0" prefWidth="40.0" text="Lab" textFill="#0b45a1">
+      <Label layoutX="173.0" layoutY="133.0" prefHeight="30.0" prefWidth="40.0" text="Lab" textFill="#0b45a1">
          <font>
             <Font name="System Bold" size="19.0" />
          </font>
       </Label>
-      <Label layoutX="129.0" layoutY="180.0" prefHeight="23.0" prefWidth="100.0" text="Course Name:" textFill="BLUE">
+      <Label layoutX="398.0" layoutY="219.0" prefHeight="23.0" prefWidth="100.0" text="Course Name:" textFill="BLUE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="129.0" layoutY="221.0" prefHeight="23.0" prefWidth="100.0" text="Course Code:" textFill="BLUE">
+      <Label layoutX="398.0" layoutY="260.0" prefHeight="23.0" prefWidth="100.0" text="Course Code:" textFill="BLUE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="courseName" layoutX="247.0" layoutY="179.0" prefHeight="26.0" prefWidth="230.0" promptText="Course Name" />
-      <TextField fx:id="code" layoutX="247.0" layoutY="220.0" onKeyReleased="#checkDigCode" prefHeight="26.0" prefWidth="230.0" promptText="Code" />
-      <Label layoutX="129.0" layoutY="269.0" prefHeight="23.0" prefWidth="117.0" text="Course Teacher:" textFill="BLUE">
+      <TextField fx:id="courseName" layoutX="516.0" layoutY="218.0" prefHeight="26.0" prefWidth="466.0" promptText="Course Name" />
+      <TextField fx:id="code" layoutX="516.0" layoutY="259.0" prefHeight="26.0" prefWidth="466.0" promptText="Code" />
+      <Label layoutX="398.0" layoutY="308.0" prefHeight="23.0" prefWidth="117.0" text="Course Teacher:" textFill="BLUE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="teacher" layoutX="247.0" layoutY="267.0" prefHeight="26.0" prefWidth="230.0" promptText="Teacher name" />
-      <Label layoutX="129.0" layoutY="306.0" prefHeight="23.0" prefWidth="100.0" text="Credit:" textFill="BLUE">
+      <TextField fx:id="teacher" layoutX="516.0" layoutY="306.0" prefHeight="26.0" prefWidth="466.0" promptText="Teacher name" />
+      <Label layoutX="398.0" layoutY="345.0" prefHeight="23.0" prefWidth="100.0" text="Credit:" textFill="BLUE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="credit" layoutX="247.0" layoutY="305.0" onKeyReleased="#checkDigCredit" prefHeight="26.0" prefWidth="230.0" promptText="Credit" />
-      <Button fx:id="save" layoutX="408.0" layoutY="446.0" mnemonicParsing="false" onAction="#saveCourse" prefHeight="30.0" prefWidth="59.0" style="-fx-background-color: blue;" text="Save" textFill="WHITE">
+      <TextField fx:id="credit" layoutX="516.0" layoutY="344.0" prefHeight="26.0" prefWidth="466.0" promptText="Credit" />
+      <Button fx:id="save" layoutX="729.0" layoutY="493.0" mnemonicParsing="false" onAction="#saveCourse" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: blue; -fx-background-radius: 40;" text="Save" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Button>
-      <Button fx:id="back" layoutX="495.0" layoutY="446.0" mnemonicParsing="false" onAction="#handleback" prefHeight="31.0" prefWidth="77.0" style="-fx-background-color: blue;" text="&lt;Back&gt;" textFill="WHITE">
+      <Button fx:id="back" layoutX="904.0" layoutY="493.0" mnemonicParsing="false" onAction="#handleback" prefHeight="38.0" prefWidth="111.0" style="-fx-background-color: blue; -fx-background-radius: 40;" text="Back" textFill="WHITE">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Button>
+      <Label fx:id="err" alignment="CENTER" layoutX="517.0" layoutY="416.0" prefHeight="26.0" prefWidth="194.0" text="This course is already enlisted!!" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Juice ITC" size="20.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Label>
    </children>
 </AnchorPane>

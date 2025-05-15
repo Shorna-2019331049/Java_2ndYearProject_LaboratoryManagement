@@ -2,21 +2,27 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Reflection?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="1400.0" style="-fx-background-color: #eaf4fc;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboratoryManagement.Controller.assignmentDetails">
    <children>
-      <ImageView fitHeight="389.0" fitWidth="840.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ImageView fitHeight="408.0" fitWidth="792.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
             <Image url="@../resource/instructorProfile.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="389.0" fitWidth="792.0" layoutX="1.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+      <ImageView fitHeight="396.0" fitWidth="792.0" layoutX="1.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0">
          <image>
             <Image url="@../resource/instructorProfile.jpg" />
          </image>
@@ -63,14 +69,9 @@
                   <Font size="13.0" />
                </font>
             </Label>
-            <Label layoutX="50.0" layoutY="263.0" text="Report:">
+            <Label layoutX="49.0" layoutY="318.0" text="Report:">
                <font>
                   <Font name="Constantia Bold" size="14.0" />
-               </font>
-            </Label>
-            <Label fx:id="reportlabel" layoutX="109.0" layoutY="263.0" prefHeight="18.0" prefWidth="147.0" text="Label">
-               <font>
-                  <Font size="13.0" />
                </font>
             </Label>
             <ImageView fx:id="logo" fitHeight="107.0" fitWidth="130.0" layoutX="450.0" pickOnBounds="true" preserveRatio="true">
@@ -78,23 +79,72 @@
                   <Image url="@../resource/logo.png" />
                </image>
             </ImageView>
-            <Label layoutX="450.0" layoutY="90.0" text="Smart Lab">
+            <Label layoutX="450.0" layoutY="90.0" text="Smart Lab" textFill="#1e26c1">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
             <Line endX="-7.79998779296875" endY="11.0" layoutX="552.0" layoutY="99.0" startX="-101.0" startY="11.0" />
-            <Button fx:id="back" layoutX="49.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleback" text="Back" textFill="#1e26c1">
+            <Button fx:id="back" layoutX="49.0" layoutY="489.0" mnemonicParsing="false" onAction="#handleback" prefHeight="30.0" prefWidth="66.0" text="Back" textFill="#1e26c1">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="submitReport" layoutX="48.0" layoutY="298.0" mnemonicParsing="false" onAction="#submitReportAction" prefHeight="30.0" prefWidth="103.0" text="Submit report" textFill="#1e26c1">
+            <Button fx:id="submitReport" layoutX="222.0" layoutY="373.0" mnemonicParsing="false" onAction="#submitReportAction" prefHeight="30.0" prefWidth="103.0" text="Submit report" textFill="#1e26c1">
                <font>
-                  <Font name="Elephant" size="12.0" />
+                  <Font name="System Bold" size="12.0" />
                </font>
             </Button>
+            <TextArea fx:id="reportTextArea" layoutX="112.0" layoutY="308.0" prefHeight="18.0" prefWidth="210.0" promptText="No file choosen" />
+            <Button fx:id="choosefile" layoutX="38.0" layoutY="375.0" mnemonicParsing="false" onAction="#handleChooseFile" prefHeight="25.0" prefWidth="91.0" text="Choose file" textFill="#1e26c1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="50.0" layoutY="272.0" text="Date:">
+               <font>
+                  <Font name="Constantia Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="dateLabel" layoutX="95.0" layoutY="273.0" text="Label" />
+            <Label fx:id="subLbl" alignment="CENTER" layoutX="322.0" layoutY="411.0" prefHeight="30.0" prefWidth="161.0" style="-fx-border-color: #1e26c1; -fx-border-radius: 30;" text="Report Submitted" textFill="#1e26c1" visible="false">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+               <effect>
+                  <Reflection fraction="1.0" topOpacity="0.28" />
+               </effect>
+            </Label>
          </children>
       </Pane>
+      <TabPane layoutX="30.0" layoutY="15.0" prefHeight="522.0" prefWidth="622.0" style="-fx-background-color: #eaf4fc;" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Assignment Details">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #eaf4fc;">
+                     <children>
+                        <TextArea fx:id="assignmentDetails" layoutX="1.0" layoutY="2.0" prefHeight="494.0" prefWidth="622.0" style="-fx-background-color: #eaf4fc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Report Details">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextArea fx:id="reportDetails" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #eaf4fc;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+         <effect>
+            <InnerShadow height="70.13" radius="26.377499999999998" width="37.38">
+               <color>
+                  <Color red="0.03602339327335358" green="0.4601169526576996" blue="0.8842105269432068" />
+               </color>
+            </InnerShadow>
+         </effect>
+      </TabPane>
    </children>
 </AnchorPane>

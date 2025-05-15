@@ -2,107 +2,135 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="577.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboratoryManagement.Controller.TeacherProfile">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="1500.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboratoryManagement.Controller.TeacherProfile">
    <children>
-      <ImageView fitHeight="242.0" fitWidth="600.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="683.0" fitWidth="1672.0" layoutX="-68.0" layoutY="179.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resource/teacherProfile.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="242.0" fitWidth="600.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="655.0" fitWidth="1778.0" layoutX="-68.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resource/teacherProfile.jpg" />
          </image>
       </ImageView>
-      <ImageView fitHeight="242.0" fitWidth="600.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="105.0" fitWidth="147.0" layoutX="1272.0" layoutY="554.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../resource/teacherProfile.jpg" />
+            <Image url="@../resource/logo.png" />
          </image>
       </ImageView>
-      <Pane layoutX="7.0" layoutY="3.0" prefHeight="579.0" prefWidth="585.0">
+      <Label layoutX="1333.0" layoutY="630.0" text="Smart Lab" textFill="#231b6b">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="Course" layoutX="605.0" layoutY="42.0" mnemonicParsing="false" onAction="#addCourse" prefHeight="35.0" prefWidth="251.0" text="Add Course">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fx:id="teacherImg" fitHeight="179.0" fitWidth="175.0" layoutX="188.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resource/profileimg.jpg" />
+         </image>
+      </ImageView>
+      <Label fx:id="username" layoutX="188.0" layoutY="288.0" prefHeight="25.0" prefWidth="251.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="fullname" layoutX="188.0" layoutY="325.0" prefHeight="25.0" prefWidth="251.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="designation" layoutX="188.0" layoutY="366.0" prefHeight="25.0" prefWidth="251.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="department" layoutX="188.0" layoutY="404.0" prefHeight="25.0" prefWidth="251.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="address" layoutX="188.0" layoutY="444.0" prefHeight="25.0" prefWidth="251.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="contact" layoutX="188.0" layoutY="481.0" prefHeight="25.0" prefWidth="251.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="logout" layoutX="188.0" layoutY="631.0" mnemonicParsing="false" onAction="#handlelogout" prefHeight="33.0" prefWidth="90.0" text="logout">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="assignment" layoutX="605.0" layoutY="102.0" mnemonicParsing="false" onAction="#assignassignment" prefHeight="35.0" prefWidth="251.0" text="Assign assignment">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="report" layoutX="604.0" layoutY="215.0" mnemonicParsing="false" onAction="#showReport" prefHeight="35.0" prefWidth="251.0" text="Reports">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="courseName" layoutX="605.0" layoutY="271.0" onAction="#showReports" prefHeight="35.0" prefWidth="251.0" promptText="Enter course name" visible="false">
+         <font>
+            <Font name="Georgia" size="12.0" />
+         </font>
+      </TextField>
+      <Button fx:id="rsSheet" layoutX="604.0" layoutY="329.0" mnemonicParsing="false" onAction="#downloadRsSheet" prefHeight="35.0" prefWidth="251.0" text="Result Sheet">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="crsNam" layoutX="649.0" layoutY="379.0" onAction="#createRes" prefHeight="34.0" prefWidth="150.0" promptText="Course Name" visible="false" />
+      <Button fx:id="dwn" layoutX="746.0" layoutY="428.0" mnemonicParsing="false" onAction="#dwnRes" prefHeight="26.0" prefWidth="90.0" text="Download" visible="false">
+         <font>
+            <Font name="Georgia" size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="groupAsg" layoutX="605.0" layoutY="158.0" mnemonicParsing="false" onAction="#asgGrp" prefHeight="35.0" prefWidth="251.0" text="Assign Group">
+         <font>
+            <Font name="Georgia" size="18.0" />
+         </font>
+      </Button>
+      <Pane fx:id="asgGrpPane" layoutX="966.0" layoutY="42.0" prefHeight="338.0" prefWidth="510.0" style="-fx-background-color: #578DBF;" visible="false">
          <children>
-            <ImageView fitHeight="105.0" fitWidth="147.0" layoutX="431.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resource/logo.png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="90.0" fitWidth="542.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resource/profileimg.jpg" />
-               </image>
-            </ImageView>
-            <Label fx:id="username" layoutX="14.0" layoutY="121.0" prefHeight="25.0" prefWidth="251.0" text="Label" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label fx:id="fullname" layoutX="14.0" layoutY="158.0" prefHeight="25.0" prefWidth="251.0" text="Label" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label fx:id="designation" layoutX="14.0" layoutY="199.0" prefHeight="25.0" prefWidth="251.0" text="Label" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label fx:id="department" layoutX="14.0" layoutY="237.0" prefHeight="25.0" prefWidth="251.0" text="Label" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label fx:id="address" layoutX="14.0" layoutY="277.0" prefHeight="25.0" prefWidth="251.0" text="Label" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label fx:id="contact" layoutX="14.0" layoutY="314.0" prefHeight="25.0" prefWidth="251.0" text="Label" textFill="WHITE">
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Label>
-            <Label layoutX="473.0" layoutY="486.0" prefHeight="40.0" prefWidth="70.0" text="Smart" textFill="#1619de">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <Label layoutX="508.0" layoutY="506.0" prefHeight="40.0" prefWidth="70.0" text="Lab" textFill="#1619de">
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <Button fx:id="Course" layoutX="262.0" layoutY="2.0" mnemonicParsing="false" onAction="#addCourse" prefHeight="25.0" prefWidth="121.0" text="Add Course">
-               <font>
-                  <Font name="Georgia" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="group" layoutX="262.0" layoutY="34.0" mnemonicParsing="false" onAction="#assignGroup" prefHeight="25.0" prefWidth="121.0" text="Assign groups">
-               <font>
-                  <Font name="Georgia" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="assignment" layoutX="262.0" layoutY="67.0" mnemonicParsing="false" onAction="#assignassignment" prefHeight="25.0" prefWidth="121.0" text="Assign assignment">
-               <font>
-                  <Font name="Georgia" size="12.0" />
-               </font>
-            </Button>
-            <Button layoutX="262.0" layoutY="104.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Reports">
-               <font>
-                  <Font name="Georgia" size="12.0" />
-               </font>
-            </Button>
-            <Button fx:id="logout" layoutX="14.0" layoutY="505.0" mnemonicParsing="false" onAction="#handlelogout" prefHeight="33.0" prefWidth="90.0" text="logout">
-               <font>
-                  <Font name="System Bold" size="14.0" />
-               </font>
+            <TextField fx:id="crsNamGrp" layoutX="64.0" layoutY="25.0" prefHeight="44.0" prefWidth="185.0" promptText="Enter course name" style="-fx-background-color: #578DBF; -fx-text-fill: white;" />
+            <TextField fx:id="nsGrp" layoutX="64.0" layoutY="95.0" prefHeight="44.0" prefWidth="224.0" promptText="Enter number of students iin a group" style="-fx-background-color: #578DBF; -fx-text-fill: white;" />
+            <Label layoutX="64.0" layoutY="200.0" prefHeight="26.0" prefWidth="106.0" text="Number of groups:" textFill="WHITE" />
+            <Label fx:id="grpNs" layoutX="174.0" layoutY="200.0" prefHeight="26.0" prefWidth="64.0" text="0" textFill="WHITE" />
+            <Button fx:id="asgnGrp" layoutX="418.0" layoutY="269.0" mnemonicParsing="false" onAction="#assignGroup" style="-fx-background-color: #73BAFC;" text="Assign" textFill="WHITE">
+               <effect>
+                  <DropShadow spread="0.24">
+                     <color>
+                        <Color red="0.5130000114440918" green="0.6807000041007996" blue="0.8999999761581421" opacity="0.8723404407501221" />
+                     </color>
+                  </DropShadow>
+               </effect>
             </Button>
          </children>
       </Pane>
+      <Label fx:id="resLbl" alignment="CENTER" layoutX="621.0" layoutY="461.0" prefHeight="44.0" prefWidth="175.0" text="Result Pdf Downloaded" textFill="WHITE" visible="false">
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Label>
    </children>
 </AnchorPane>

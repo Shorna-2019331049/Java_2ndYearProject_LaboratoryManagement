@@ -1,7 +1,7 @@
 package LaboratoryManagement.Controller;
 
-import LaboratoryManagement.User;
 import DBconnection.DBhandler;
+import LaboratoryManagement.User;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,10 +17,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class AssignmentTable {
 
@@ -45,18 +42,24 @@ public class AssignmentTable {
     @FXML
     private TableColumn<User, String> report;
 
+    @FXML
+    private TableColumn<User, Date> date;
+
     String userid = loginController.USERID;
 
     @FXML
     private Button DetailsAssignment;
 
+    public static String asnDetail, rptName = "sample";
     @FXML
     void initialize() {
+    //    System.out.println("assignment table: "+assignmentAssign.DATE);
         courseName.setCellValueFactory(new PropertyValueFactory<User,String>("courseName"));
         expName.setCellValueFactory(new PropertyValueFactory<User,String>("expName"));
         groupNo.setCellValueFactory(new PropertyValueFactory<User,Integer>("groupNo"));
         materials.setCellValueFactory(new PropertyValueFactory<User,String>("materials"));
         report.setCellValueFactory(new PropertyValueFactory<User,String>("report"));
+        date.setCellValueFactory(new PropertyValueFactory<User,Date>("date"));
 
         ObservableList<User> list = FXCollections.observableArrayList();
         Connection conn;
@@ -64,22 +67,58 @@ public class AssignmentTable {
         PreparedStatement pst;
         handler = new DBhandler();
         conn = handler.getConnection();
+
         String stm = "SELECT * from " + StudentProfile.course + " where groupno = ?";
         try {
             pst = conn.prepareStatement(stm);
             pst.setInt(1,StudentProfile.grpno);
             ResultSet rs = pst.executeQuery();
             while (rs.next()){
-                list.add(new User(StudentProfile.course,rs.getString("expName"),StudentProfile.grpno,"PC","LAB1"));
+                String s1="SELECT * FROM "+ StudentProfile.course +"_report where (regNo=? and expName=?) ";
+                try{
+                    pst = conn.prepareStatement(s1);
+                    pst.setString(1,StudentProfile.regNo);
+                    pst.setString(2,rs.getString("expName"));
+                    System.out.println(StudentProfile.regNo);
+                    ResultSet r=pst.executeQuery();
+
+                    if(r.next()){
+                        rptName = r.getString("pdf");
+                    }
+                    else{
+                        rptName = "Sample";
+                    }
+                }catch (SQLException e){
+                    e.printStackTrace();
+                }
+                list.add(new User(StudentProfile.course,rs.getString("expName"),StudentProfile.grpno,
+                        rs.getString("materials"),rptName,rs.getDate("date")));
                 Table.setItems(list);
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
     }
 
     @FXML
     void handleDetailsAssignment(ActionEvent event) throws IOException {
+        String stm = "SELECT * from " + StudentProfile.course + " where groupno = ? and expName = ?";
+        Connection conn;
+        DBhandler handler;
+        PreparedStatement pst;
+        handler = new DBhandler();
+        conn = handler.getConnection();
+        try {
+            pst = conn.prepareStatement(stm);
+            pst.setInt(1,StudentProfile.grpno);
+            pst.setString(2,Table.getSelectionModel().getSelectedItem().getExpName());
+            ResultSet rs = pst.executeQuery();
+            rs.next();
+            asnDetail = rs.getString("assignment");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         DetailsAssignment.getScene().getWindow().hide();
         FXMLLoader loader=new FXMLLoader();
         loader.setLocation(getClass().getResource("/LaboratoryManagement/FXML/assignmentDetails.fxml"));
@@ -93,7 +132,7 @@ public class AssignmentTable {
         Stage window=(Stage) ((Node)event.getSource()).getScene().getWindow();
         window.setScene(sc);
         window.show();
-        window.setResizable(false);
+       // window.setResizable(false);
     }
 
     @FXML
@@ -104,7 +143,7 @@ public class AssignmentTable {
         Scene sc = new Scene(root);
         newassign.setScene(sc);
         newassign.show();
-        newassign.setResizable(false);
+        //newassign.setResizable(false);
     }
 
 }

@@ -5,6 +5,8 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DropShadow?>
@@ -80,7 +82,7 @@
                   </Lighting>
                </effect>
             </Button>
-            <Button fx:id="dashboard" layoutX="56.0" layoutY="400.0" maxHeight="100.0" maxWidth="100.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="95.0" style="-fx-border-color: #45cbf4; -fx-background-color: #2D3447; -fx-background-radius: 30; -fx-border-radius: 30;" text="Dashboard" textFill="#45cbf4">
+            <Button fx:id="dashboard" layoutX="56.0" layoutY="400.0" maxHeight="100.0" maxWidth="100.0" minHeight="0.0" minWidth="0.0" mnemonicParsing="false" onAction="#showCrs" prefHeight="28.0" prefWidth="95.0" style="-fx-border-color: #45cbf4; -fx-background-color: #2D3447; -fx-background-radius: 30; -fx-border-radius: 30;" text="Dashboard" textFill="#45cbf4">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
@@ -227,6 +229,17 @@
             </DropShadow>
          </effect>
       </Label>
+      <TableView fx:id="list" editable="true" layoutX="306.0" layoutY="274.0" prefHeight="424.0" prefWidth="474.0" style="-fx-background-color: teal; -fx-text-fill: white;" visible="false">
+        <columns>
+          <TableColumn fx:id="crsNam" prefWidth="153.60003662109375" style="-fx-background-color: teal; -fx-text-fill: white;" text="Course" />
+          <TableColumn fx:id="crsCode" prefWidth="72.0" style="-fx-background-color: #00FFE6;" text="Code" />
+            <TableColumn fx:id="tName" prefWidth="144.0" style="-fx-background-color: teal; -fx-text-fill: white;" text="Teacher" />
+            <TableColumn fx:id="expNo" prefWidth="102.4000244140625" style="-fx-background-color: #00FFE6;" text="Classes" />
+        </columns>
+         <effect>
+            <DropShadow />
+         </effect>
+      </TableView>
    </children>
    <effect>
       <ColorAdjust contrast="0.3" />

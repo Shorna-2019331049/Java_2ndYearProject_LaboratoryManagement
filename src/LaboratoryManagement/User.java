@@ -1,18 +1,64 @@
 package LaboratoryManagement;
 
+import java.util.Date;
+
 public class User {
     private String courseName;
     private String expName;
     private Integer groupNo;
     private String materials;
     private String report;
+    private Date date;
+    private String code;
+    private String tname;
+    private Integer expNum;
 
-    public User(String courseName, String expName, Integer groupNo, String materials, String report) {
+    public User(String courseName, String code, String tname, Integer expNum) {
+        this.courseName = courseName;
+        this.code = code;
+        this.tname = tname;
+        this.expNum = expNum;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setTname(String tname) {
+        this.tname = tname;
+    }
+
+    public void setExpNum(Integer expNum) {
+        this.expNum = expNum;
+    }
+
+    public String getTname() {
+        return tname;
+    }
+
+    public Integer getExpNum() {
+        return expNum;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public User(String courseName, String expName, Integer groupNo, String materials, String report, Date date) {
         this.courseName = courseName;
         this.expName = expName;
         this.groupNo = groupNo;
         this.materials = materials;
         this.report = report;
+        this.date =date;
     }
 
     public void setCourseName(String courseName) {

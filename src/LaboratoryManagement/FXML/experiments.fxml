@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="633.0" prefWidth="1062.0" style="-fx-background-color: #3A99BF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboratoryManagement.Controller.Experiments">
+   <children>
+      <Pane layoutY="-1.0" prefHeight="633.0" prefWidth="218.0" style="-fx-background-color: #1D36C2;" AnchorPane.bottomAnchor="0.39999999999997726" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="-1.0">
+         <effect>
+            <Shadow height="255.0" radius="127.0" width="255.0">
+               <color>
+                  <Color red="0.019600000232458115" green="0.12936000525951385" blue="0.49000000953674316" opacity="0.2800000011920929" />
+               </color>
+            </Shadow>
+         </effect>
+      </Pane>
+      <Button fx:id="save" layoutX="789.0" layoutY="536.0" mnemonicParsing="false" onAction="#SaveAct" prefHeight="33.0" prefWidth="96.0" style="-fx-background-color: #40ABE0; -fx-background-radius: 50; -fx-border-color: white; -fx-border-radius: 50;" text="Save" textFill="WHITE">
+         <effect>
+            <InnerShadow height="18.66" radius="8.844999999999999" width="18.72">
+               <color>
+                  <Color red="0.9539902806282043" green="0.9535672664642334" blue="0.9789473414421082" />
+               </color>
+            </InnerShadow>
+         </effect>
+         <font>
+            <Font name="Consolas Bold" size="16.0" />
+         </font>
+      </Button>
+      <Label fx:id="course" alignment="CENTER" contentDisplay="CENTER" layoutX="440.0" layoutY="37.0" prefHeight="50.0" prefWidth="195.0" style="-fx-background-radius: 50; -fx-border-color: white; -fx-border-radius: 50;" text="Label" textFill="WHITE">
+         <effect>
+            <DropShadow spread="0.5">
+               <color>
+                  <Color red="0.9684210419654846" green="0.9576607942581177" blue="0.9576607942581177" />
+               </color>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font name="Consolas" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="expNum" alignment="CENTER" contentDisplay="CENTER" layoutX="374.0" layoutY="111.0" prefHeight="50.0" prefWidth="323.0" style="-fx-background-radius: 50; -fx-border-color: white; -fx-border-radius: 50;" text="Label" textFill="WHITE">
+         <effect>
+            <DropShadow spread="0.5">
+               <color>
+                  <Color red="0.9684210419654846" green="0.9576607942581177" blue="0.9576607942581177" />
+               </color>
+            </DropShadow>
+         </effect>
+         <font>
+            <Font name="Consolas" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="back" layoutX="939.0" layoutY="536.0" mnemonicParsing="false" onAction="#Backact" prefHeight="33.0" prefWidth="96.0" style="-fx-background-color: #40ABE0; -fx-background-radius: 50; -fx-border-color: white; -fx-border-radius: 50;" text="Back" textFill="WHITE">
+         <effect>
+            <InnerShadow height="18.66" radius="8.844999999999999" width="18.72">
+               <color>
+                  <Color red="0.9539902806282043" green="0.9535672664642334" blue="0.9789473414421082" />
+               </color>
+            </InnerShadow>
+         </effect>
+         <font>
+            <Font name="Consolas Bold" size="16.0" />
+         </font>
+      </Button>
+      <TextField fx:id="experimentName" layoutX="322.0" layoutY="182.0" prefHeight="50.0" prefWidth="454.0" promptText="Experiment Name" style="-fx-background-color: #3A99BF; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: white; -fx-text-fill: #ffffff;">
+         <effect>
+            <DropShadow height="9.3" radius="4.15" width="9.3">
+               <color>
+                  <Color red="1.0" green="0.9925925731658936" blue="0.9925925731658936" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <TextField fx:id="materials" layoutX="322.0" layoutY="242.0" prefHeight="50.0" prefWidth="454.0" promptText="Required Materials" style="-fx-background-color: #3A99BF; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: white; -fx-text-fill: #ffffff;">
+         <effect>
+            <DropShadow height="9.3" radius="4.15" width="9.3">
+               <color>
+                  <Color red="1.0" green="0.9925925731658936" blue="0.9925925731658936" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+      <Label fx:id="err" alignment="CENTER" layoutX="392.0" layoutY="582.0" prefHeight="26.0" prefWidth="288.0" text="No more experiment available!!" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Ink Free" size="20.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <Label fx:id="err1" alignment="CENTER" layoutX="392.0" layoutY="582.0" prefHeight="26.0" prefWidth="288.0" text="Experiment saved successfully!!" textFill="WHITE" visible="false">
+         <font>
+            <Font name="Ink Free" size="20.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Label>
+      <TextArea fx:id="asg" layoutX="331.0" layoutY="301.0" prefHeight="202.0" prefWidth="435.0" promptText="Assignment">
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="1.0" green="1.0" blue="1.0" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextArea>
+      <TextField fx:id="mrk" layoutX="414.0" layoutY="518.0" prefHeight="34.0" prefWidth="243.0" promptText="Full Marks" style="-fx-background-color: #3A99BF; -fx-background-radius: 30; -fx-border-radius: 30; -fx-border-color: white; -fx-text-fill: #ffffff;">
+         <effect>
+            <DropShadow height="9.3" radius="4.15" width="9.3">
+               <color>
+                  <Color red="1.0" green="0.9925925731658936" blue="0.9925925731658936" />
+               </color>
+            </DropShadow>
+         </effect>
+      </TextField>
+   </children>
+</AnchorPane>

@@ -5,100 +5,121 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="668.0" prefWidth="512.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboratoryManagement.Controller.TeacherSignUpController">
+<AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="1500.0" style="-fx-background-color: #2D3447;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaboratoryManagement.Controller.TeacherSignUpController">
    <children>
-      <Label layoutX="14.0" layoutY="21.0" prefHeight="27.0" prefWidth="156.0" text="Teacher Sign Up" textFill="WHITE">
+      <Label layoutX="60.0" layoutY="12.0" prefHeight="35.0" prefWidth="219.0" text="Teacher Sign Up" textFill="WHITE">
          <font>
-            <Font name="System Bold Italic" size="18.0" />
+            <Font name="System Bold Italic" size="24.0" />
          </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.821052610874176" green="0.7754386067390442" blue="0.7754386067390442" />
+               </color>
+            </DropShadow>
+         </effect>
       </Label>
-      <Line endX="132.99998474121094" endY="7.62939453125E-6" layoutX="115.0" layoutY="48.0" startX="-100.0" stroke="WHITE" AnchorPane.leftAnchor="13.507092285156261" AnchorPane.rightAnchor="263.29290771484375" />
-      <Label layoutX="41.0" layoutY="186.0" text="Name:" textFill="WHITE" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="431.0">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="37.0" layoutY="220.0" prefHeight="19.0" prefWidth="70.0" text=" Username:" textFill="WHITE" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="401.0">
-         <font>
-            <Font name="System Bold" size="13.0" />
-         </font>
-      </Label>
-      <Label layoutX="37.0" layoutY="254.0" prefHeight="19.0" prefWidth="70.0" text=" Password:" textFill="WHITE" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="401.0">
+      <Line endX="132.99998474121094" endY="7.62939453125E-6" layoutX="115.0" layoutY="48.0" startX="880.5929565429688" startY="7.62939453125E-6" stroke="WHITE" AnchorPane.leftAnchor="13.507092285156261" AnchorPane.rightAnchor="263.29290771484375" />
+      <Label layoutX="440.0" layoutY="276.0" text="Name:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="41.0" layoutY="286.0" text="Contact:" textFill="WHITE" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="419.8">
+      <Label layoutX="436.0" layoutY="311.0" prefHeight="19.0" prefWidth="70.0" text=" Username:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="name" layoutX="124.0" layoutY="183.0" prefHeight="26.0" prefWidth="253.0" promptText="Enter name" style="-fx-background-color: #f2f2f2;" AnchorPane.leftAnchor="124.00000000000003" AnchorPane.rightAnchor="134.4" />
-      <TextField fx:id="username" layoutX="124.0" layoutY="217.0" onKeyReleased="#checkDuplicate" prefHeight="26.0" prefWidth="254.0" promptText="Enter username" style="-fx-background-color: #f2f2f2;" AnchorPane.leftAnchor="124.00000000000003" AnchorPane.rightAnchor="134.4" />
-      <TextField fx:id="contact" layoutX="123.0" layoutY="283.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter contact" style="-fx-background-color: #f2f2f2;" AnchorPane.leftAnchor="124.00000000000003" AnchorPane.rightAnchor="134.4" />
-      <Button fx:id="signup" layoutX="272.0" layoutY="492.0" mnemonicParsing="false" onAction="#handlesignup" prefHeight="34.0" prefWidth="98.0" style="-fx-background-color: #00BFFF;" text="Sign Up" textFill="WHITE" AnchorPane.rightAnchor="134.4">
+      <Label layoutX="436.0" layoutY="345.0" prefHeight="19.0" prefWidth="70.0" text=" Password:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="440.0" layoutY="377.0" text="Contact:" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="name" layoutX="523.0" layoutY="273.0" prefHeight="26.0" prefWidth="439.0" promptText="Enter name" style="-fx-background-color: #f2f2f2;" />
+      <TextField fx:id="username" layoutX="523.0" layoutY="308.0" onKeyReleased="#checkDuplicate" prefHeight="26.0" prefWidth="439.0" promptText="Enter username" style="-fx-background-color: #f2f2f2;" />
+      <TextField fx:id="contact" layoutX="523.0" layoutY="377.0" prefHeight="26.0" prefWidth="439.0" promptText="Enter contact" style="-fx-background-color: #f2f2f2;" />
+      <Button fx:id="signup" layoutX="861.0" layoutY="630.0" mnemonicParsing="false" onAction="#handlesignup" prefHeight="34.0" prefWidth="98.0" style="-fx-background-color: #00BFFF; -fx-background-radius: 40;" text="Sign Up" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <ImageView fitHeight="94.0" fitWidth="90.0" layoutX="251.0" layoutY="35.0" nodeOrientation="INHERIT" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="171.0">
+      <ImageView fx:id="teacherImage" fitHeight="163.0" fitWidth="180.0" layoutX="641.0" layoutY="34.0" nodeOrientation="INHERIT">
          <image>
             <Image url="@../resource/TeacherSignUp.png" />
          </image>
       </ImageView>
-      <PasswordField fx:id="password" layoutX="124.0" layoutY="251.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter password" style="-fx-background-color: #f2f2f2;" AnchorPane.leftAnchor="124.00000000000003" AnchorPane.rightAnchor="134.4" />
-      <Label layoutX="43.0" layoutY="321.0" text="Gender:" textFill="WHITE" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="421.0">
+      <PasswordField fx:id="password" layoutX="523.0" layoutY="341.0" prefHeight="26.0" prefWidth="439.0" promptText="Enter password" style="-fx-background-color: #f2f2f2;" />
+      <Label layoutX="438.0" layoutY="497.0" text="Gender:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="44.0" layoutY="350.0" text="Department:" textFill="WHITE" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="390.4">
+      <Label layoutX="437.0" layoutY="419.0" text="Department:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <RadioButton fx:id="male" layoutX="132.0" layoutY="320.0" mnemonicParsing="false" text="Male" textFill="WHITE" AnchorPane.leftAnchor="124.00000000000003" AnchorPane.rightAnchor="326.4">
+      <RadioButton fx:id="male" layoutX="528.0" layoutY="496.0" mnemonicParsing="false" text="Male" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="female" layoutX="296.0" layoutY="321.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="78.0" text="Female" textFill="WHITE" AnchorPane.leftAnchor="296.0" AnchorPane.rightAnchor="134.4">
+      <RadioButton fx:id="female" layoutX="692.0" layoutY="497.0" mnemonicParsing="false" prefHeight="19.0" prefWidth="78.0" text="Female" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </RadioButton>
-      <TextField fx:id="department" layoutX="123.0" layoutY="346.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter department" AnchorPane.leftAnchor="124.00000000000003" AnchorPane.rightAnchor="134.4" />
-      <Button fx:id="backHomepage" layoutX="319.0" layoutY="592.0" mnemonicParsing="false" onAction="#handleBackHomepage" prefHeight="27.0" prefWidth="166.0" text="&lt; Back to Homepage &gt;" AnchorPane.bottomAnchor="60.800036621093724" AnchorPane.rightAnchor="30.0">
+      <TextField fx:id="department" layoutX="523.0" layoutY="416.0" prefHeight="26.0" prefWidth="439.0" promptText="Enter department" />
+      <Button fx:id="backHomepage" layoutX="1145.0" layoutY="664.0" mnemonicParsing="false" onAction="#handleBackHomepage" prefHeight="27.0" prefWidth="166.0" text="Back to Homepage">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <Label layoutX="46.0" layoutY="385.0" text="Address:" textFill="WHITE" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="418.2">
+      <Label layoutX="438.0" layoutY="528.0" text=" Address:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="address" layoutX="124.0" layoutY="381.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter address" AnchorPane.leftAnchor="124.00000000000003" AnchorPane.rightAnchor="134.4" />
-      <Label layoutX="46.0" layoutY="418.0" text="Designation:" textFill="WHITE" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="393.4">
+      <TextField fx:id="address" layoutX="523.0" layoutY="525.0" prefHeight="26.0" prefWidth="439.0" promptText="Enter address" />
+      <Label layoutX="437.0" layoutY="461.0" text="Designation:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="designation" layoutX="124.0" layoutY="414.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter designation" AnchorPane.leftAnchor="124.00000000000003" AnchorPane.rightAnchor="134.4" />
-      <Label layoutX="47.0" layoutY="454.0" text="Salary:" textFill="WHITE" AnchorPane.leftAnchor="41.0" AnchorPane.rightAnchor="430.2">
+      <TextField fx:id="designation" layoutX="523.0" layoutY="457.0" prefHeight="26.0" prefWidth="439.0" promptText="Enter designation" />
+      <Label layoutX="438.0" layoutY="569.0" text=" Salary:" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TextField fx:id="salary" layoutX="123.0" layoutY="451.0" prefHeight="26.0" prefWidth="254.0" promptText="Enter salary" AnchorPane.leftAnchor="124.00000000000003" AnchorPane.rightAnchor="134.4" />
-      <Polygon fill="DODGERBLUE" layoutX="455.0" layoutY="629.0" points="47.399993896484375, 50.5999755859375, 67.20001220703125, -27.39996337890625, 67.20001220703125, 50.5999755859375" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="0.40008544921875" AnchorPane.rightAnchor="1.199951171875" />
-      <Polygon fill="DODGERBLUE" layoutX="465.0" layoutY="639.0" points="14.5999755859375, 40.5999755859375, -38.20001220703125, -1.0, 57.20001220703125, 40.5999755859375" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="0.40006103515622726" AnchorPane.rightAnchor="0.5999755859375" />
+      <TextField fx:id="salary" layoutX="521.0" layoutY="566.0" prefHeight="26.0" prefWidth="439.0" promptText="Enter salary" />
+      <Polygon fill="DODGERBLUE" layoutX="455.0" layoutY="629.0" points="47.399993896484375, 50.5999755859375, 67.20004272460938, -85.39552307128906, 67.20001220703125, 50.5999755859375" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="0.40008544921875" AnchorPane.rightAnchor="1.199951171875" />
+      <Polygon fill="DODGERBLUE" layoutX="465.0" layoutY="639.0" points="14.5999755859375, 40.5999755859375, -110.00311279296875, -65.39420318603516, 57.20001220703125, 40.5999755859375" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="0.40006103515622726" AnchorPane.rightAnchor="0.5999755859375" />
+      <Button fx:id="browseImage" layoutX="677.0" layoutY="206.0" mnemonicParsing="false" onAction="#handleBrowseImage" prefHeight="26.0" prefWidth="107.0" style="-fx-background-color: #00BFFF; -fx-background-radius: 40;" text="Browse Image" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.34736841917037964" green="0.30105262994766235" blue="0.30105262994766235" />
+               </color>
+            </DropShadow>
+         </effect>
+      </Button>
    </children>
 </AnchorPane>
