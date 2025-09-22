@@ -1,4 +1,5 @@
-# Laboratory Management System
+# ( Object Oriented Programming Lab Project )
+## Laboratory Management System
 This desktop application will solve all laboratory management issues, such as assigning different experiments to each group of students, updating laboratory elements, groups, and experiments, receiving and evaluating reports and making comments, instructor information, final results, instrument purchasing, and maintenance costs.
  ## Basic features: 
 **Information:**  Each sort of user will have an account and will be able to see the information that pertains to them.<br>
